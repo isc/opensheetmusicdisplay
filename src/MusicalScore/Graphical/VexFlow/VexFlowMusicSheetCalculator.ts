@@ -1067,7 +1067,7 @@ export class VexFlowMusicSheetCalculator extends MusicSheetCalculator {
 
         this.calculateOctaveShiftSkyBottomLine(startStaffEntry, lastNoteOfFirstShift, graphicalOctaveShift, startStaffLine);
       } else {
-        graphicalOctaveShift.setEndNote(endStaffEntry);
+        graphicalOctaveShift.setEndNote(endStaffEntry, octaveShift.endVoiceEntryIndex > 0 ? octaveShift.endVoiceEntryIndex : -1);
         this.calculateOctaveShiftSkyBottomLine(startStaffEntry, endStaffEntry, graphicalOctaveShift, startStaffLine);
       }
       startStaffLine.OctaveShifts.push(graphicalOctaveShift);
